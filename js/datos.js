@@ -53,14 +53,14 @@ window.AESS = {
   ],
 
   /* ── PARÁMETROS MAESTROS DEL VEHÍCULO ────────────────────────────── */
-  masa: 400,                   // Masa final en gramos
+  masa: 335,                   // Masa final en gramos
   alturaCohete: 65,            // Altura total en cm
   diametro: 12,                // Diámetro en cm
   cg: 28,                      // Centro de Gravedad en cm desde la punta
   cp: 42,                      // Centro de Presión en cm desde la punta
   margenEstabilidad: 1.17,     // (42 - 28) / 12 = 1.17 calibres
   aletas: 3,                   // 3 trapezoidales simétricas a 120°
-  distribucionAletas: "3 aletas trapezoidales · 120°",
+  distribucionAletas: "3 aletas trapezoidales simétricas cada 120°",
   ojiva: "Parabólica roma 3D", // Ojiva parabólica roma
   estructura: "2 botellas PET de 3 L en serie",
 
@@ -68,13 +68,18 @@ window.AESS = {
   volumenBotella: 3,           // Volumen de cámara en litros
   agua: 1,                     // Aprox. 1 L de agua
   aire: 2,                     // Aprox. 2 L de aire
-  presionMaxima: 70,           // 70 PSI máximo
+  presionMaxima: 70,           // ≤ 70 PSI
 
-  /* ── TRAYECTORIA Y MISIÓN ────────────────────────────────────────── */
-  altitudMaxima: 70,           // 70 m
-  tiempoApogeo: 4.6,           // 4,6 s
-  tiempoVuelo: 24,             // 24 s
-  velocidadDescenso: 5.2,      // ≈ 5,2 m/s
+  /* ── TRAYECTORIA Y MISIÓN (OPENROCKET / DINÁMICA) ────────────────── */
+  altitudMaxima: 30.1,         // 30.1 m apogeo previsto
+  tiempoApogeo: 2.32,          // 2.32 s
+  optimalDelay: 2.26,          // 2.26 s
+  tiempoVuelo: 11.3,           // 11.3 s
+  velocidadSalidaGuia: 25.8,   // 25.8 m/s
+  velocidadMaxima: 37.4,       // 37.4 m/s
+  aceleracionMaxima: 550,      // 550 m/s²
+  velocidadDespliegue: 4.52,   // 4.52 m/s al momento del despliegue
+  velocidadDescenso: 3.4,      // 3.4 m/s velocidad de aterrizaje / llegada a tierra
 
   /* ── SISTEMA DE RECUPERACIÓN ─────────────────────────────────────── */
   paracaidasDiametro: 75,      // Circular Ø75 cm
@@ -85,9 +90,10 @@ window.AESS = {
   procesador: "ESP32-S3",
   radio: "SX1262 integrado",
   frecuenciaLora: 915,         // LoRa 915 MHz
+  enlaceComplementario: "ESP-NOW 2,4 GHz",  // Estación terrena ↔ ESP32-CAM + Heltec
   sensorica: "GY-91",
   gps: "NEO-M8N",
-  almacenamiento: "microSD",
+  camara: "ESP32-CAM",
   alimentacion: "LiPo 1S",
   estacionTerrena: "Heltec WiFi LoRa 32 V3 + Laptop / Dashboard",
 

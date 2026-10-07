@@ -92,7 +92,7 @@
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem;">
               <div class="samaria-card" style="padding: 0.75rem;">
                 <div class="status-badge goal" style="margin-bottom: 0.3rem;">OBJETIVO</div>
-                <div class="giant-metric-num cyan">70 m</div>
+                <div class="giant-metric-num cyan">30.1 m</div>
                 <div class="giant-metric-label">Altitud Máxima</div>
                 <div class="giant-metric-sub">Apogeo previsto</div>
               </div>
@@ -106,7 +106,7 @@
 
               <div class="samaria-card" style="padding: 0.75rem;">
                 <div class="status-badge limit" style="margin-bottom: 0.3rem;">FINAL</div>
-                <div class="giant-metric-num gold">400 g</div>
+                <div class="giant-metric-num gold">335 g</div>
                 <div class="giant-metric-label">Masa Final</div>
                 <div class="giant-metric-sub">Límite reglamentario</div>
               </div>
@@ -115,35 +115,14 @@
                 <div class="status-badge goal" style="margin-bottom: 0.3rem;">TIEMPO REAL</div>
                 <div class="giant-metric-num" style="color: var(--accent-green);">LoRa</div>
                 <div class="giant-metric-label">Telemetría</div>
-                <div class="giant-metric-sub">Datos en vuelo</div>
+                <div class="giant-metric-sub">915 MHz</div>
               </div>
             </div>
           </div>
 
-          <!-- Silueta Vectorial Flotante del AESS-SAT con Escala Vertical Informativa -->
-          <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-            <svg width="220" height="340" viewBox="0 0 140 320" style="filter: drop-shadow(0 0 15px rgba(56,189,248,0.25));">
-              <!-- Eje de Altitud Informativo -->
-              <line x1="25" y1="20" x2="25" y2="300" stroke="rgba(255,255,255,0.2)" stroke-dasharray="3,3" stroke-width="1.5" />
-              <circle cx="25" cy="25" r="4" fill="var(--accent-gold)" />
-              <text x="35" y="29" fill="var(--accent-gold)" font-family="'Outfit'" font-size="9" font-weight="800">70 m APOGEO</text>
-              
-              <circle cx="25" cy="295" r="4" fill="var(--accent-cyan)" />
-              <text x="35" y="298" fill="var(--accent-cyan)" font-family="'Outfit'" font-size="9" font-weight="800">0 m RAMPA</text>
-
-              <!-- Cohete -->
-              <g transform="translate(65, 75)">
-                <path d="M 15 0 C 7 35, 0 65, 0 80 L 30 80 C 30 65, 23 35, 15 0 Z" fill="#38bdf8" />
-                <rect x="0" y="80" width="30" height="35" fill="#04122e" stroke="#38bdf8" stroke-width="1.5" />
-                <text x="15" y="101" fill="#ffffff" font-size="6.5" font-family="'Outfit'" font-weight="900" text-anchor="middle">HELTEC V3</text>
-                <rect x="0" y="115" width="30" height="75" fill="rgba(56,189,248,0.18)" stroke="rgba(56,189,248,0.5)" stroke-width="1.5" rx="3" />
-                <rect x="2" y="155" width="26" height="33" fill="rgba(56,189,248,0.4)" rx="2" />
-                <text x="15" y="174" fill="#ffffff" font-size="7" font-family="'Outfit'" font-weight="800" text-anchor="middle">PET 3L</text>
-                <path d="M 0 160 L -14 195 L 0 190 Z" fill="#f59e0b" />
-                <path d="M 30 160 L 44 195 L 30 190 Z" fill="#f59e0b" />
-                <polygon points="9,190 21,190 24,198 6,198" fill="#94a3b8" />
-              </g>
-            </svg>
+          <!-- Silueta Real del AESS-SAT con Llamados de Ingeniería (Fondo Transparente) -->
+          <div style="display: flex; justify-content: center; align-items: center; height: 100%; position: relative;">
+            <img src="assets/img/cohete_slide_1.png" alt="AESS-SAT Cohete Experimental" style="max-height: clamp(340px, 62vh, 530px); width: auto; object-fit: contain; filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.45));">
           </div>
         </div>
       </section>
@@ -171,37 +150,16 @@
             <div>
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
                 <div class="status-badge goal">ALCANCE EXPERIMENTAL REAL</div>
-                <span style="font-size: 0.72rem; color: var(--accent-cyan); font-family: var(--font-mono);">COTA VERTICAL: 0 – 70 m</span>
+                <span style="font-size: 0.72rem; color: var(--accent-cyan); font-family: var(--font-mono);">COTA VERTICAL: 0 – 30.1 m</span>
               </div>
               <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.4; text-shadow: var(--text-shadow-clean);">
-                Misión BRISA explora un <strong>perfil vertical instrumentado de hasta aproximadamente 70 metros</strong>. La Sierra Nevada (5.700 m a 42 km del mar) explica el contexto ambiental que inspira la misión; no se afirma medir el gradiente total hasta la cumbre.
+                Misión BRISA explora un <strong>perfil vertical instrumentado de hasta aproximadamente 30,1 metros</strong>. La Sierra Nevada (5.700 m a 42 km del mar) explica el contexto ambiental que inspira la misión; no se afirma medir el gradiente total hasta la cumbre.
               </p>
             </div>
 
-            <!-- Esquema Vectorial Costa - Sierra Nevada -->
+            <!-- Esquema Topográfico Real Costa - Sierra Nevada -->
             <div style="margin: 0.6rem 0;">
-              <svg id="svg-relief" viewBox="0 0 500 200" style="width: 100%; height: auto; border-radius: 8px; background: rgba(3, 8, 20, 0.65); border: 1px solid var(--border-subtle);">
-                <defs>
-                  <linearGradient id="mountainGrad" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#064e3b" />
-                    <stop offset="70%" stop-color="#0f766e" />
-                    <stop offset="100%" stop-color="#e2e8f0" />
-                  </linearGradient>
-                </defs>
-                <path d="M 0 155 Q 50 153 100 155 L 100 200 L 0 200 Z" fill="#0369a1" opacity="0.8" />
-                <text x="14" y="180" fill="#38bdf8" font-size="9" font-family="'Outfit'" font-weight="800">MAR CARIBE (0 m)</text>
-                
-                <path d="M 100 155 C 180 150, 230 130, 310 90 C 370 65, 420 25, 470 10 L 500 10 L 500 200 L 100 200 Z" fill="url(#mountainGrad)" opacity="0.88" />
-                <polygon points="460,16 470,10 485,20 475,24" fill="#ffffff" />
-                <text x="345" y="22" fill="#ffffff" font-size="9" font-family="'Outfit'" font-weight="900">SIERRA NEVADA (5.700 m)</text>
-                
-                <text x="105" y="145" fill="#cbd5e1" font-size="8" font-family="'Outfit'" font-weight="700">SANTA MARTA</text>
-                
-                <!-- Vector de vuelo microperfil -->
-                <line x1="155" y1="155" x2="155" y2="95" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="3,3" />
-                <circle cx="155" cy="95" r="4" fill="#f59e0b" />
-                <text x="165" y="100" fill="#38bdf8" font-size="8" font-family="'Outfit'" font-weight="800">AESS-SAT (~70 m)</text>
-              </svg>
+              <img src="assets/img/imagen_slide_2.png" alt="Perfil Topográfico Santa Marta - Misión BRISA" style="width: 100%; border-radius: 8px; border: 1px solid var(--border-subtle); object-fit: contain; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
             </div>
 
             <div style="font-size: 0.72rem; color: var(--text-muted); text-shadow: var(--text-shadow-clean);">
@@ -265,100 +223,125 @@
 
         <div class="exploded-view-container">
           <!-- Columna Izquierda: Pila del Despiece Interactivo -->
-          <div class="samaria-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-            <button class="action-btn" id="btn-toggle-explode" style="margin-bottom: 0.6rem; border-color: var(--accent-cyan); color: var(--accent-cyan);">
-              ⚡ Expandir / Contraer Despiece
-            </button>
+          <div class="samaria-card" style="display: flex; flex-direction: column; height: 100%; padding: 0.75rem 0.95rem; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--border-subtle);">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan); font-weight: 800; letter-spacing: 0.08em;">
+                DESPIECE AXIAL DEL COHETE
+              </span>
+              <button class="action-btn" id="btn-toggle-explode" style="font-size: 0.7rem; padding: 0.2rem 0.6rem; border-color: var(--accent-cyan); color: var(--accent-cyan);">
+                ⚡ Expandir / Contraer Despiece
+              </button>
+            </div>
 
             <div class="rocket-stage-stack" id="stage-stack">
               <div class="stage-part active" data-stage="ojiva">
-                <svg width="55" height="45" viewBox="0 0 60 50">
-                  <path d="M 30 0 C 15 25, 0 45, 0 50 L 60 50 C 60 45, 45 25, 30 0 Z" fill="#38bdf8" />
-                </svg>
-                <div class="stage-label-tag">01. OJIVA PARABÓLICA ROMA</div>
+                <div class="stage-img-wrapper">
+                  <img src="assets/img/ojiva.png" alt="Ojiva Parabólica Roma" class="stage-img">
+                </div>
+                <div class="stage-text-block">
+                  <div class="stage-label-title">01. OJIVA PARABÓLICA ROMA</div>
+                  <div class="stage-label-sub">Cono aerodinámico impreso en PLA · Protección bahía</div>
+                </div>
+                <div class="stage-indicator-arrow">›</div>
               </div>
 
               <div class="stage-part" data-stage="recup">
-                <svg width="55" height="30" viewBox="0 0 60 35">
-                  <rect x="0" y="0" width="60" height="35" rx="4" fill="#f59e0b" />
-                  <circle cx="30" cy="17" r="7" fill="#020612" />
-                </svg>
-                <div class="stage-label-tag">02. RECUPERACIÓN · MG90S + Ø75 cm</div>
+                <div class="stage-img-wrapper">
+                  <img src="assets/img/recuperacion.png" alt="Sistema de Recuperación" class="stage-img">
+                </div>
+                <div class="stage-text-block">
+                  <div class="stage-label-title">02. RECUPERACIÓN · MG90S + Ø75 CM</div>
+                  <div class="stage-label-sub">Eyección activa servomotor MG90S · Paracaídas Ø75 cm</div>
+                </div>
+                <div class="stage-indicator-arrow">›</div>
               </div>
 
               <div class="stage-part" data-stage="avionica">
-                <svg width="55" height="40" viewBox="0 0 60 45">
-                  <rect x="0" y="0" width="60" height="45" rx="4" fill="#0f766e" stroke="#38bdf8" stroke-width="2" />
-                  <text x="30" y="27" fill="#ffffff" font-size="9" font-family="'Outfit'" font-weight="900" text-anchor="middle">HELTEC V3</text>
-                </svg>
-                <div class="stage-label-tag">03. HELTEC WIFI LORA 32 V3</div>
+                <div class="stage-img-wrapper">
+                  <img src="assets/img/avionica.png" alt="Bahía de Aviónica" class="stage-img">
+                </div>
+                <div class="stage-text-block">
+                  <div class="stage-label-title">03. HELTEC WIFI LORA 32 V3</div>
+                  <div class="stage-label-sub">Computador ESP32-S3 + LoRa 915 MHz · Sensórica GY-91</div>
+                </div>
+                <div class="stage-indicator-arrow">›</div>
               </div>
 
               <div class="stage-part" data-stage="camara">
-                <svg width="55" height="65" viewBox="0 0 60 75">
-                  <rect x="0" y="0" width="60" height="75" rx="6" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="2" />
-                  <text x="30" y="42" fill="#ffffff" font-size="9" font-family="'Outfit'" font-weight="800" text-anchor="middle">2× PET 3L</text>
-                </svg>
-                <div class="stage-label-tag">04. FUSELAJE · 2× PET 3 L</div>
+                <div class="stage-img-wrapper">
+                  <img src="assets/img/fuselaje.png" alt="Fuselaje Cámara de Propulsión" class="stage-img">
+                </div>
+                <div class="stage-text-block">
+                  <div class="stage-label-title">04. FUSELAJE · 2× PET 3 L</div>
+                  <div class="stage-label-sub">Cámara hidroneumática 3 L en serie · Presión ≤ 70 PSI</div>
+                </div>
+                <div class="stage-indicator-arrow">›</div>
               </div>
 
               <div class="stage-part" data-stage="aletas">
-                <svg width="90" height="35" viewBox="0 0 100 40">
-                  <polygon points="35,0 65,0 60,20 40,20" fill="#94a3b8" />
-                  <polygon points="35,0 10,35 35,30" fill="#f59e0b" />
-                  <polygon points="65,0 90,35 65,30" fill="#f59e0b" />
-                </svg>
-                <div class="stage-label-tag">05. 3 ALETAS TRAPEZOIDALES (120°)</div>
+                <div class="stage-img-wrapper">
+                  <img src="assets/img/aletas.png" alt="Empenaje 3 Aletas" class="stage-img">
+                </div>
+                <div class="stage-text-block">
+                  <div class="stage-label-title">05. 3 ALETAS TRAPEZOIDALES (120°)</div>
+                  <div class="stage-label-sub">Empenaje pasivo simétrico · Margen estático ≈ 1,17 cal</div>
+                </div>
+                <div class="stage-indicator-arrow">›</div>
               </div>
             </div>
           </div>
 
           <!-- Columna Derecha: Detalle Técnico + Auditoría de Masa -->
-          <div style="display: flex; flex-direction: column; gap: 0.8rem; height: 100%; justify-content: space-between;">
-            <div class="samaria-card" style="flex: 1;">
-              <div class="status-badge goal" id="stage-badge" style="margin-bottom: 0.4rem;">MÓDULO SELECCIONADO</div>
-              <h3 id="stage-title" style="font-family: var(--font-title); font-size: 1.35rem; color: #ffffff; margin-bottom: 0.3rem;">
-                Ojiva Parabólica Roma 3D
-              </h3>
-              <p id="stage-desc" style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.4;">
-                Cono de baja resistencia aerodinámica impreso en PLA. Protege la bahía de aviónica y aloja el mecanismo de destrabe.
-              </p>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.8rem;">
-                <div style="background: rgba(0,0,0,0.35); padding: 0.5rem 0.8rem; border-radius: 6px;">
-                  <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Material / Tecnología:</div>
-                  <div id="stage-spec1" style="font-weight: 800; color: var(--accent-cyan); font-size: 0.9rem;">PLA FDM</div>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem; height: 100%; justify-content: space-between;">
+            <div class="samaria-card" style="flex: 1.25; display: flex; flex-direction: column; justify-content: space-between; padding: 0.9rem 1.1rem;">
+              <div>
+                <div class="status-badge goal" id="stage-badge" style="margin-bottom: 0.35rem;">01. AERODINÁMICA // PROA</div>
+                <h3 id="stage-title" style="font-family: var(--font-title); font-size: clamp(1.2rem, 1.55vw, 1.45rem); color: #ffffff; margin-bottom: 0.3rem;">
+                  Ojiva Parabólica Roma 3D
+                </h3>
+                <p id="stage-desc" style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.45;">
+                  Cono de baja resistencia aerodinámica impreso en PLA. Protege la bahía de aviónica y aloja el mecanismo de destrabe.
+                </p>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.6rem;">
+                <div style="background: rgba(0,0,0,0.4); padding: 0.55rem 0.8rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06);">
+                  <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Material / Tecnología:</div>
+                  <div id="stage-spec1" style="font-weight: 800; color: var(--accent-cyan); font-size: 0.88rem; margin-top: 0.15rem;">PLA FDM</div>
                 </div>
-                <div style="background: rgba(0,0,0,0.35); padding: 0.5rem 0.8rem; border-radius: 6px;">
-                  <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Función:</div>
-                  <div id="stage-spec2" style="font-weight: 800; color: var(--accent-gold); font-size: 0.9rem;">Protección / Integración</div>
+                <div style="background: rgba(0,0,0,0.4); padding: 0.55rem 0.8rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06);">
+                  <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Función Principal:</div>
+                  <div id="stage-spec2" style="font-weight: 800; color: var(--accent-gold); font-size: 0.88rem; margin-top: 0.15rem;">Protección / Integración</div>
                 </div>
               </div>
             </div>
 
             <!-- Parámetros Físicos y Límites Oficiales -->
-            <div class="samaria-card" style="padding: 0.85rem 1.2rem;">
+            <div class="samaria-card" style="padding: 0.8rem 1.1rem; flex: 0.95; display: flex; flex-direction: column; justify-content: space-between;">
               <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 0.74rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">
+                <span style="font-size: 0.74rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;">
                   DIMENSIONES Y MASA DEL VEHÍCULO
                 </span>
                 <span class="status-badge limit">LÍMITE REGLAMENTARIO</span>
               </div>
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin: 0.5rem 0;">
-                <div>
-                  <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Masa Final:</div>
-                  <div style="font-size: 1.4rem; font-weight: 900; color: var(--accent-gold);">400 g</div>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin: 0.4rem 0;">
+                <div style="background: rgba(0,0,0,0.3); padding: 0.4rem 0.6rem; border-radius: 6px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                  <div style="font-size: 0.66rem; color: var(--text-muted); text-transform: uppercase;">Masa Final:</div>
+                  <div style="font-size: 1.45rem; font-weight: 900; color: var(--accent-gold); line-height: 1.1;">335 g</div>
+                  <div style="font-size: 0.62rem; color: var(--accent-gold); opacity: 0.85;">Límite: ≤ 400 g</div>
                 </div>
-                <div>
-                  <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Altura Total:</div>
-                  <div style="font-size: 1.4rem; font-weight: 900; color: #ffffff;">65 cm</div>
+                <div style="background: rgba(0,0,0,0.3); padding: 0.4rem 0.6rem; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                  <div style="font-size: 0.66rem; color: var(--text-muted); text-transform: uppercase;">Altura Total:</div>
+                  <div style="font-size: 1.45rem; font-weight: 900; color: #ffffff; line-height: 1.1;">65 cm</div>
+                  <div style="font-size: 0.62rem; color: var(--text-muted);">Límite: ≤ 100 cm</div>
                 </div>
-                <div>
-                  <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Diámetro:</div>
-                  <div style="font-size: 1.4rem; font-weight: 900; color: var(--accent-cyan);">12 cm</div>
+                <div style="background: rgba(0,0,0,0.3); padding: 0.4rem 0.6rem; border-radius: 6px; border: 1px solid rgba(56, 189, 248, 0.2);">
+                  <div style="font-size: 0.66rem; color: var(--text-muted); text-transform: uppercase;">Diámetro:</div>
+                  <div style="font-size: 1.45rem; font-weight: 900; color: var(--accent-cyan); line-height: 1.1;">12 cm</div>
+                  <div style="font-size: 0.62rem; color: var(--accent-cyan); opacity: 0.85;">Calibre de ref.</div>
                 </div>
               </div>
-              <div style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.3; border-top: 1px solid var(--border-subtle); padding-top: 0.35rem;">
-                <strong>Límites Oficiales Hidrochallenge:</strong> 400 g masa máxima seca · 100 cm altura máxima · 12 cm diámetro.
+              <div style="font-size: 0.72rem; color: var(--text-secondary); line-height: 1.3; border-top: 1px solid var(--border-subtle); padding-top: 0.35rem;">
+                <strong>Límites Oficiales Hidrochallenge:</strong> ≤ 400 g masa máxima seca · 100 cm altura máxima · 12 cm diámetro.
               </div>
             </div>
           </div>
@@ -434,25 +417,9 @@
               </p>
             </div>
 
-            <!-- Esquema Horizontal de Estabilidad CG y CP -->
-            <div style="background: rgba(3, 8, 20, 0.6); border-radius: 10px; padding: 0.8rem; margin: 0.5rem 0; border: 1px solid var(--border-subtle);">
-              <svg viewBox="0 0 360 85" style="width: 100%; height: auto;">
-                <line x1="20" y1="42" x2="340" y2="42" stroke="rgba(255,255,255,0.2)" stroke-dasharray="3,3" />
-                <path d="M 40 42 L 90 22 L 300 22 L 320 12 L 320 72 L 300 62 L 90 62 Z" fill="none" stroke="#38bdf8" stroke-width="1.8" />
-                
-                <!-- CG -->
-                <circle cx="150" cy="42" r="5" fill="#f59e0b" />
-                <line x1="150" y1="14" x2="150" y2="70" stroke="#f59e0b" stroke-width="1.5" />
-                <text x="150" y="10" fill="#f59e0b" font-size="8.5" font-family="'Outfit'" font-weight="900" text-anchor="middle">CG · 28 cm</text>
-                
-                <!-- CP -->
-                <circle cx="230" cy="42" r="5" fill="#38bdf8" />
-                <line x1="230" y1="14" x2="230" y2="70" stroke="#38bdf8" stroke-width="1.5" />
-                <text x="230" y="80" fill="#38bdf8" font-size="8.5" font-family="'Outfit'" font-weight="900" text-anchor="middle">CP · 42 cm</text>
-                
-                <!-- Margen Estático -->
-                <line x1="155" y1="42" x2="225" y2="42" stroke="#10b981" stroke-width="2.5" />
-              </svg>
+            <!-- Esquema Real de Estabilidad: CG 28 cm, CP 42 cm, Margen Estático (Horizontal) -->
+            <div style="background: rgba(3, 8, 20, 0.55); border-radius: 10px; padding: 0.6rem 0.9rem; margin: 0.4rem 0; border: 1px solid var(--border-subtle); display: flex; justify-content: center; align-items: center; min-height: 140px;">
+              <img src="assets/img/cohete_slide_4.png" alt="Esquema Real de Estabilidad Pasiva: CG 28 cm, CP 42 cm, Margen Estático ≈ 1.17 calibres" style="width: 100%; max-height: clamp(125px, 18vh, 165px); object-fit: contain; filter: drop-shadow(0 4px 16px rgba(0,0,0,0.65));">
             </div>
 
             <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 0.4rem;">
@@ -529,15 +496,15 @@
                 <div style="font-size: 0.72rem; color: var(--text-muted);">Latitud y Longitud para rescate</div>
               </div>
 
-              <div class="arch-sensor-card sensor-toggle-btn" data-sensor="microsd">
+              <div class="arch-sensor-card sensor-toggle-btn" data-sensor="esp32cam">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <span class="arch-node-bus-tag">BUS SPI</span>
-                  <span class="status-badge goal" style="font-size: 0.6rem; padding: 0.1rem 0.35rem;">RESPALDO</span>
+                  <span class="arch-node-bus-tag">OV2640</span>
+                  <span class="status-badge goal" style="font-size: 0.6rem; padding: 0.1rem 0.35rem;">VIDEO</span>
                 </div>
                 <div style="font-family: var(--font-title); font-size: 0.92rem; font-weight: 800; color: #ffffff; margin-top: 0.2rem;">
-                  microSD · Memoria Local
+                  ESP32-CAM · Cámara a Bordo
                 </div>
-                <div style="font-size: 0.72rem; color: var(--text-muted);">Registro de datos no volátil a bordo</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Captura de video del vuelo</div>
               </div>
 
               <div class="arch-sensor-card sensor-toggle-btn" data-sensor="lora">
@@ -550,6 +517,17 @@
                 </div>
                 <div style="font-size: 0.72rem; color: var(--text-muted);">Transmisión a segunda Heltec en tierra</div>
               </div>
+
+              <div class="arch-sensor-card sensor-toggle-btn" data-sensor="espnow" style="grid-column: 1 / -1;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="arch-node-bus-tag">2,4 GHz</span>
+                  <span class="status-badge goal" style="font-size: 0.6rem; padding: 0.1rem 0.35rem;">ENLACE ADICIONAL</span>
+                </div>
+                <div style="font-family: var(--font-title); font-size: 0.92rem; font-weight: 800; color: #ffffff; margin-top: 0.2rem;">
+                  ESP-NOW · Estación Terrena ↔ ESP32-CAM + Heltec
+                </div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">La estación terrena envía datos a la ESP32-CAM y a la Heltec para ampliar la telemetría</div>
+              </div>
             </div>
           </div>
 
@@ -559,7 +537,7 @@
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
                 <span class="status-badge goal" id="sensor-detail-badge">CICLO DE VIDA DEL DATO</span>
                 <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan);" id="sensor-freq">
-                  LoRa 915 MHz + microSD
+                  LoRa 915 MHz + ESP-NOW + ESP32-CAM
                 </span>
               </div>
 
@@ -571,34 +549,39 @@
                   Adquisición, Procesamiento y Telemetría
                 </div>
                 <p id="sensor-desc" style="font-size: 0.8rem; color: var(--text-secondary); margin: 0.35rem 0; line-height: 1.35;">
-                  GY-91 y GPS adquieren las variables. La Heltec procesa y transmite por LoRa 915 MHz, mientras la microSD conserva una copia local.
+                  GY-91 y GPS adquieren las variables. La Heltec procesa y transmite por LoRa 915 MHz, mientras la ESP32-CAM graba el video del vuelo. La estación terrena se comunica además por ESP-NOW con la ESP32-CAM y la Heltec.
                 </p>
                 <div style="background: rgba(0,0,0,0.35); padding: 0.35rem 0.6rem; border-radius: 6px; font-size: 0.72rem; margin-top: 0.35rem;">
                   <span style="color: var(--text-muted);">Variables:</span> <strong id="sensor-vars" style="color: var(--accent-gold);">Altitud · Temperatura · Presión · Acc XYZ · Latitud · Longitud</strong>
                 </div>
               </div>
 
-              <!-- Miniatura Discreta del Esquemático Real de Aviónica -->
-              <div class="schematic-thumb-card" id="btn-open-schematic" title="Click para ampliar esquemático (o presiona B4)">
-                <div class="schematic-thumb-preview">
-                  <img src="assets/img/esquematico_avionica.jpg" alt="Esquemático Eléctrico Aviónica AESS UNIMAGDALENA">
-                  <div class="schematic-thumb-overlay">
-                    <span style="font-size: 0.72rem; font-weight: 800; color: #ffffff; letter-spacing: 0.05em; background: rgba(3,8,20,0.85); padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid var(--border-cyan);">🔍 AMPLIAR ESQUEMÁTICO</span>
+              <!-- Acceso Interactivo Dual: Esquemático Real + Dashboard Telemétrico -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; margin-top: 0.5rem;">
+                <div class="schematic-thumb-card" id="btn-open-schematic" title="Click para ampliar esquemático (o presiona B4)" style="margin: 0; padding: 0.35rem 0.5rem; background: rgba(3, 8, 20, 0.7); border: 1px solid var(--border-cyan); border-radius: 8px; cursor: pointer;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                    <span style="font-family: var(--font-title); font-size: 0.68rem; font-weight: 800; color: var(--accent-cyan); letter-spacing: 0.05em;">ESQUEMÁTICO</span>
+                    <span style="font-size: 0.58rem; color: #ffffff; background: rgba(56,189,248,0.2); padding: 0.05rem 0.3rem; border-radius: 3px; font-family: var(--font-mono);">AMPLIAR</span>
+                  </div>
+                  <div class="schematic-thumb-preview" style="height: 48px;">
+                    <img src="assets/img/esquematico_avionica.jpg" alt="Esquemático Eléctrico Aviónica AESS UNIMAGDALENA" style="width: 100%; height: 100%; object-fit: cover;">
                   </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.35rem;">
-                  <span style="font-family: var(--font-title); font-size: 0.72rem; font-weight: 800; color: var(--accent-cyan); letter-spacing: 0.06em;">
-                    ESQUEMÁTICO REAL DE AVIÓNICA
-                  </span>
-                  <span style="font-size: 0.66rem; color: var(--accent-gold); font-family: var(--font-mono); font-weight: 700;">
-                    B4 · Ver arquitectura eléctrica
-                  </span>
+
+                <div class="schematic-thumb-card" id="btn-open-dashboard" title="Click para ampliar dashboard telemétrico (o presiona B4)" style="margin: 0; padding: 0.35rem 0.5rem; background: rgba(3, 8, 20, 0.7); border: 1px solid rgba(245, 158, 11, 0.45); border-radius: 8px; cursor: pointer;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                    <span style="font-family: var(--font-title); font-size: 0.68rem; font-weight: 800; color: var(--accent-gold); letter-spacing: 0.05em;">DASHBOARD LORA</span>
+                    <span style="font-size: 0.58rem; color: #ffffff; background: rgba(245,158,11,0.25); padding: 0.05rem 0.3rem; border-radius: 3px; font-family: var(--font-mono);">AMPLIAR</span>
+                  </div>
+                  <div class="schematic-thumb-preview" style="height: 48px;">
+                    <img src="assets/img/dashboard_telemetria.jpg" alt="Dashboard Telemetría Estación Terrena" style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
                 </div>
               </div>
             </div>
 
             <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.35rem; font-size: 0.72rem; color: var(--text-secondary); display: flex; justify-content: space-between; align-items: center;">
-              <span><strong>Estación Terrena:</strong> Segunda Heltec + Laptop en tiempo real.</span>
+              <span><strong>Estación Terrena:</strong> Segunda Heltec + Laptop · LoRa + ESP-NOW en tiempo real.</span>
               <span class="status-badge valid" style="font-size: 0.62rem; padding: 0.1rem 0.4rem;">CIRCUITO VERIFICADO</span>
             </div>
           </div>
@@ -701,11 +684,11 @@
               <div style="display: flex; flex-direction: column; gap: 0.6rem; margin: 0.7rem 0;">
                 <div class="samaria-card" style="padding: 0.7rem;">
                   <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div class="giant-metric-num cyan" style="font-size: clamp(1.8rem, 2.4vw, 2.2rem);">≈ 5,2 m/s</div>
-                    <span class="status-badge goal">VELOCIDAD</span>
+                    <div class="giant-metric-num cyan" style="font-size: clamp(1.8rem, 2.4vw, 2.2rem);">3,4 m/s</div>
+                    <span class="status-badge goal">ATERRIZAJE</span>
                   </div>
-                  <div class="giant-metric-label">Velocidad Media de Descenso</div>
-                  <div class="giant-metric-sub">Descenso medio considerado para la misión</div>
+                  <div class="giant-metric-label">Velocidad de Llegada a Tierra</div>
+                  <div class="giant-metric-sub">Despliegue a 4,52 m/s · Ø75 cm</div>
                 </div>
 
                 <div class="samaria-card" style="padding: 0.7rem;">
@@ -717,7 +700,7 @@
             </div>
 
             <div style="font-size: 0.72rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 0.4rem;">
-              * Descenso medio considerado para la misión: ≈5,2 m/s.
+              * Velocidad del vehículo al desplegar: 4,52 m/s · Velocidad de llegada a tierra: 3,4 m/s.
             </div>
           </div>
         </div>
@@ -750,13 +733,13 @@
           </button>
 
           <div class="sim-slider-container">
-            <input type="range" class="sim-time-slider" id="sim-time-slider" min="0" max="24" step="0.1" value="0">
+            <input type="range" class="sim-time-slider" id="sim-time-slider" min="0" max="11.3" step="0.1" value="0">
             <div class="sim-time-clock" id="sim-time-clock">T+0.0s</div>
           </div>
 
           <div style="display: flex; gap: 0.4rem;">
             <button class="action-btn active" id="filter-alt" style="font-size: 0.72rem; border-color: var(--accent-cyan); color: var(--accent-cyan);">● Altitud Z(t)</button>
-            <button class="action-btn active" id="filter-pres" style="font-size: 0.72rem; border-color: #ffffff; color: #ffffff;">● Presión P(t)</button>
+            <button class="action-btn active" id="filter-vel" style="font-size: 0.72rem; border-color: #ffffff; color: #ffffff;">● Velocidad Vz(t)</button>
             <button class="action-btn active" id="filter-acc" style="font-size: 0.72rem; border-color: var(--accent-gold); color: var(--accent-gold);">● Aceleración aZ(t)</button>
           </div>
         </div>
@@ -765,21 +748,18 @@
         <div class="flight-sim-wrapper">
           <div class="vertical-flight-track">
             <div class="track-axis"></div>
-            <div class="track-marker" style="top: 15px;">70m (Apogeo)</div>
-            <div class="track-marker" style="top: 32%;">50m</div>
-            <div class="track-marker" style="top: 52%;">35m</div>
-            <div class="track-marker" style="top: 72%;">15m</div>
+            <div class="track-marker" style="top: 15px;">30.1m (Apogeo)</div>
+            <div class="track-marker" style="top: 25%;">22.5m</div>
+            <div class="track-marker" style="top: 50%;">15m</div>
+            <div class="track-marker" style="top: 75%;">7.5m</div>
             <div class="track-marker" style="bottom: 25px;">0m (Rampa)</div>
 
             <div class="sim-rocket-sprite" id="sim-rocket-sprite">
-              <svg width="24" height="42" viewBox="0 0 28 50">
-                <path d="M 14 0 C 8 15, 2 28, 2 35 L 26 35 C 26 28, 20 15, 14 0 Z" fill="#38bdf8" />
-                <rect x="5" y="35" width="18" height="15" fill="#f59e0b" rx="2" />
-              </svg>
-              <div id="sim-chute-icon" style="opacity: 0; font-size: 1.2rem; transition: opacity 0.2s ease;">🪂</div>
+              <img id="sim-rocket-ascent" src="assets/img/cohete_slide_7.png" alt="AESS-SAT Ascenso" style="height: 52px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(56,189,248,0.6)); display: block;">
+              <img id="sim-rocket-descent" src="assets/img/cohete_slide_7_chute.png" alt="AESS-SAT Descenso con Paracaídas" style="height: 72px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(245,158,11,0.6)); display: none;">
             </div>
 
-            <div style="position: absolute; bottom: 6px; width: 100%; text-align: center; font-size: 0.68rem; color: var(--accent-cyan); font-weight: 800;">
+            <div style="position: absolute; bottom: 8px; width: 100%; text-align: center; font-size: 0.65rem; letter-spacing: 0.04em; color: var(--accent-cyan); font-weight: 800;">
               PERFIL VERTICAL
             </div>
           </div>
@@ -861,8 +841,8 @@
               <div class="criteria-cat-num">01. CRITERIO</div>
               <h4 class="criteria-title">Masa y Talla</h4>
               <div class="criteria-value-box">
-                <div class="criteria-val" style="color: var(--accent-cyan);">400 g</div>
-                <div style="font-size: 0.72rem; color: var(--text-muted);">Límite: <strong>400 g</strong></div>
+                <div class="criteria-val" style="color: var(--accent-cyan);">335 g</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Límite: <strong>≤ 400 g</strong></div>
                 <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">Altura: <strong>65 cm</strong> · Ø: <strong>12 cm</strong></div>
               </div>
             </div>
@@ -895,7 +875,7 @@
               <div class="criteria-value-box">
                 <div class="criteria-val" style="color: var(--accent-cyan); font-size: 1.15rem;">915 MHz</div>
                 <div style="font-size: 0.72rem; color: var(--text-muted);">Heltec WiFi LoRa 32 V3</div>
-                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">Estación terrena + Laptop</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">+ ESP-NOW 2,4 GHz a estación terrena</div>
               </div>
             </div>
             <div class="criteria-status-box">
@@ -909,9 +889,9 @@
               <div class="criteria-cat-num">04. CRITERIO</div>
               <h4 class="criteria-title">Recuperación</h4>
               <div class="criteria-value-box">
-                <div class="criteria-val" style="color: var(--accent-cyan); font-size: 1.15rem;">≈ 5,2 m/s</div>
+                <div class="criteria-val" style="color: var(--accent-cyan); font-size: 1.15rem;">3,4 m/s</div>
                 <div style="font-size: 0.72rem; color: var(--text-muted);">Paracaídas circular <strong>Ø75 cm</strong></div>
-                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">Servomotor MG90S</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">Despliegue a 4,52 m/s · MG90S</div>
               </div>
             </div>
             <div class="criteria-status-box">
@@ -927,7 +907,7 @@
               <div class="criteria-value-box">
                 <div class="criteria-val" style="color: var(--accent-cyan); font-size: 1.15rem;">6 Variables</div>
                 <div style="font-size: 0.72rem; color: var(--text-muted);">GY-91 + GPS NEO-M8N</div>
-                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">microSD + LoRa en vivo</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">LoRa en vivo + video ESP32-CAM</div>
               </div>
             </div>
             <div class="criteria-status-box">
@@ -975,7 +955,7 @@
                   <span class="status-badge measured">VALIDADO</span>
                 </div>
                 <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.25rem;">
-                  <strong>Estructura:</strong> 2 botellas PET de 3 L en serie, masa final de <strong>400 g</strong>, altura total de <strong>65 cm</strong> y diámetro de <strong>12 cm</strong>.
+                  <strong>Estructura:</strong> 2 botellas PET de 3 L en serie, masa final de <strong>335 g</strong>, altura total de <strong>65 cm</strong> y diámetro de <strong>12 cm</strong>.
                 </div>
               </div>
 
@@ -995,7 +975,7 @@
                   <span class="status-badge measured">VALIDADO</span>
                 </div>
                 <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.25rem;">
-                  <strong>Mecanismo:</strong> Liberación activa por servomotor MG90S y paracaídas circular de <strong>Ø75 cm</strong> con velocidad de descenso de <strong>≈ 5,2 m/s</strong>.
+                  <strong>Mecanismo:</strong> Liberación activa por servomotor MG90S y paracaídas circular de <strong>Ø75 cm</strong> con velocidad al despliegue de <strong>4,52 m/s</strong> y aterrizaje a <strong>3,4 m/s</strong>.
                 </div>
               </div>
             </div>
@@ -1021,7 +1001,7 @@
                 <div style="display: flex; gap: 0.6rem; align-items: flex-start;">
                   <span style="color: var(--accent-cyan); font-weight: 900;">02</span>
                   <div style="font-size: 0.82rem; color: var(--text-secondary);">
-                    <strong>Cruce de datos transmitidos y almacenados:</strong> Comparar el enlace LoRa 915 MHz frente al registro completo en microSD.
+                    <strong>Cruce de telemetría y video de vuelo:</strong> Contrastar los datos del enlace LoRa 915 MHz con el video grabado por la ESP32-CAM.
                   </div>
                 </div>
 
@@ -1105,15 +1085,15 @@
         </div>
 
         <!-- Módulo QR de Acceso al Sitio Web Oficial en Esquina Inferior Derecha -->
-        <a class="slide10-qr-card" href="https://mcangen.github.io/TelePatin/index.html" target="_blank" rel="noopener" title="Escanear o clic para abrir sitio web oficial">
+        <a class="slide10-qr-card" href="https://mcangen.github.io/TelePatin/index.html" target="_blank" rel="noopener" title="Escanear o clic para abrir documentación oficial">
           <div class="qr-img-box">
-            <img src="assets/img/qr_telepatin.png" alt="QR Sitio Web Oficial AESS-SAT">
+            <img src="assets/img/qr_telepatin.png" alt="QR Documentación Oficial AESS-SAT">
           </div>
           <div style="margin-top: 0.35rem; font-family: var(--font-title); font-size: 0.72rem; font-weight: 800; color: var(--accent-cyan); letter-spacing: 0.06em; text-align: center;">
-            SITIO WEB OFICIAL
+            DOCUMENTACIÓN DEL PROYECTO
           </div>
           <div style="font-size: 0.62rem; color: var(--text-muted); font-family: var(--font-mono); text-align: center;">
-            mcangen.github.io/TelePatin
+            Escanea para explorar AESS-SAT
           </div>
         </a>
       </section>
@@ -1179,7 +1159,7 @@
                 <tr style="border-top: 2px solid var(--accent-cyan); font-size: 0.95rem;">
                   <td style="padding: 0.6rem 0; font-weight: 900; color: #ffffff;">TOTAL MASA FINAL</td>
                   <td style="color: var(--text-muted);">Masa seca total del vehículo</td>
-                  <td style="text-align: right; color: var(--accent-cyan); font-weight: 900; font-size: 1.15rem;">400 g</td>
+                  <td style="text-align: right; color: var(--accent-cyan); font-weight: 900; font-size: 1.15rem;">335 g</td>
                 </tr>
               </tbody>
             </table>
@@ -1195,7 +1175,7 @@
                 El vehículo experimental AESS-SAT fue dimensionado estrictamente bajo el reglamento de Hidrochallenge Colombia 2026:
               </p>
               <ul style="font-size: 0.8rem; color: var(--text-secondary); margin: 0.6rem 0 0 1.2rem; line-height: 1.45;">
-                <li><strong>Masa final:</strong> 400 g (Límite reglamentario: 400 g).</li>
+                <li><strong>Masa final:</strong> 335 g (Límite reglamentario: ≤ 400 g).</li>
                 <li><strong>Altura total:</strong> 65 cm.</li>
                 <li><strong>Diámetro de fuselaje:</strong> 12 cm.</li>
                 <li><strong>Etapas:</strong> 1 etapa hidroneumática.</li>
@@ -1203,7 +1183,7 @@
             </div>
             <div style="background: rgba(0, 240, 255, 0.12); border: 1px solid var(--border-cyan); padding: 0.7rem; border-radius: 8px;">
               <div style="font-size: 0.72rem; color: var(--accent-cyan); font-weight: 800; text-transform: uppercase;">Estado Reglamentario:</div>
-              <div style="font-size: 1.2rem; font-weight: 900; color: #ffffff;">Masa Final: 400 g (CUMPLE)</div>
+              <div style="font-size: 1.2rem; font-weight: 900; color: #ffffff;">Masa Final: 335 g (CUMPLE)</div>
             </div>
           </div>
         </div>
@@ -1272,7 +1252,7 @@
             RECUPERACIÓN: <span class="highlight-cyan">ECUACIÓN DE DESCENSO</span>
           </h2>
           <p class="slide-subtitle-clean">
-            Modelo de equilibrio de fuerzas aerodinámicas y velocidad media de descenso.
+            Modelo de dinámica de descenso, velocidad al despliegue y aterrizaje.
           </p>
         </div>
 
@@ -1287,7 +1267,7 @@
               </div>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; font-size: 0.82rem; color: var(--text-secondary);">
-              <div>• Masa final (m): <strong>0.400 kg</strong></div>
+              <div>• Masa final (m): <strong>0.335 kg</strong></div>
               <div>• Gravedad local (g): <strong>9.78 m/s²</strong></div>
               <div>• Densidad del aire (ρ): <strong>1.18 kg/m³</strong> (0m, 30°C)</div>
               <div>• Coef. arrastre (C_d): <strong>1.5</strong> (circular)</div>
@@ -1295,7 +1275,7 @@
               <div>• Área proyectada (A): <strong>≈ 0.442 m²</strong></div>
             </div>
             <div style="margin-top: 0.8rem; padding-top: 0.6rem; border-top: 1px solid var(--border-subtle); font-size: 0.84rem; color: var(--accent-gold);">
-              Velocidad media resultante: <strong>≈ 5,2 m/s</strong> (energía de impacto absorbible por la estructura).
+              Velocidad al despliegue: <strong>4,52 m/s</strong> · Velocidad de llegada a tierra: <strong>3,4 m/s</strong>.
             </div>
           </div>
 
@@ -1325,12 +1305,41 @@
           </p>
         </div>
 
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; min-height: 0; z-index: 4; gap: 0.6rem; width: 100%;">
-          <div style="background: rgba(2, 6, 18, 0.9); border: 1px solid var(--border-cyan); border-radius: 12px; padding: 0.6rem; width: 100%; max-width: 1080px; height: clamp(330px, 58vh, 520px); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(56, 189, 248, 0.15);">
-            <img src="assets/img/esquematico_avionica.jpg" alt="Esquemático Eléctrico Aviónica AESS UNIMAGDALENA" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px;">
+        <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; z-index: 4; gap: 0.75rem; width: 100%;">
+          <!-- Superior: Esquemático Eléctrico Real de Aviónica -->
+          <div class="samaria-card" id="card-schematic-b4" style="flex: 1.2; min-height: 0; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; padding: 0.55rem 0.9rem; border-color: var(--border-cyan); transition: var(--transition-smooth);" title="Click para expandir e inspeccionar esquemático en pantalla completa">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span class="status-badge goal" style="font-size: 0.6rem; padding: 0.08rem 0.35rem;">CIRCUITO A BORDO</span>
+                <span style="font-family: var(--font-title); font-size: 0.86rem; color: #ffffff; font-weight: 800; letter-spacing: 0.05em;">
+                  01 // ESQUEMÁTICO ELÉCTRICO REAL · AVIÓNICA AESS UNIMAGDALENA
+                </span>
+              </div>
+              <button class="action-btn" id="btn-expand-schematic-b4" style="font-size: 0.68rem; padding: 0.15rem 0.6rem; border-color: var(--accent-cyan); color: var(--accent-cyan);">
+                🔍 Expandir Esquemático
+              </button>
+            </div>
+            <div style="flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.45); border-radius: 6px; overflow: hidden; padding: 0.25rem;">
+              <img src="assets/img/esquematico_avionica.jpg" alt="Esquemático Eléctrico Aviónica AESS UNIMAGDALENA" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 4px;">
+            </div>
           </div>
-          <div style="font-family: var(--font-mono); font-size: clamp(0.78rem, 1vw, 0.9rem); color: var(--accent-gold); font-weight: 800; letter-spacing: 0.15em; text-align: center;">
-            ALIMENTACIÓN <span style="color: var(--accent-cyan);">·</span> SENSADO <span style="color: var(--accent-cyan);">·</span> CONTROL <span style="color: var(--accent-cyan);">·</span> ACTUACIÓN
+
+          <!-- Inferior: Dashboard de Estación Terrena en Tiempo Real -->
+          <div class="samaria-card" id="card-dashboard-b4" style="flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; padding: 0.55rem 0.9rem; border-color: rgba(245, 158, 11, 0.45); transition: var(--transition-smooth);" title="Click para expandir e inspeccionar dashboard en pantalla completa">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span class="status-badge valid" style="font-size: 0.6rem; padding: 0.08rem 0.35rem;">RECEPCIÓN LORA 915 MHz</span>
+                <span style="font-family: var(--font-title); font-size: 0.86rem; color: #ffffff; font-weight: 800; letter-spacing: 0.05em;">
+                  02 // ESTACIÓN TERRENA · DASHBOARD TELEMÉTRICO EN TIEMPO REAL
+                </span>
+              </div>
+              <button class="action-btn" id="btn-expand-dashboard-b4" style="font-size: 0.68rem; padding: 0.15rem 0.6rem; border-color: var(--accent-gold); color: var(--accent-gold);">
+                🔍 Inspeccionar Dashboard
+              </button>
+            </div>
+            <div style="flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.45); border-radius: 6px; overflow: hidden; padding: 0.25rem;">
+              <img src="assets/img/dashboard_telemetria.jpg" alt="Dashboard Telemetría Estación Terrena" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 4px;">
+            </div>
           </div>
         </div>
       </section>
@@ -1343,7 +1352,7 @@
             TELEMETRÍA LORA: <span class="highlight-cyan">CICLO DE VIDA DEL DATO</span>
           </h2>
           <p class="slide-subtitle-clean">
-            Flujo de adquisición, empaquetado binario, almacenamiento en microSD y enlace RF 915 MHz.
+            Flujo de adquisición, empaquetado binario, enlace RF 915 MHz y video de vuelo con ESP32-CAM.
           </p>
         </div>
 
@@ -1355,9 +1364,10 @@
             <div style="font-family: var(--font-mono); font-size: 0.78rem; background: rgba(0,0,0,0.4); padding: 0.8rem; border-radius: 8px; line-height: 1.5;">
               1. Sensores adquieren: GY-91 (I²C) + GPS NEO-M8N (UART)<br>
               2. Heltec V3 procesa y empaqueta en binario compacto<br>
-              3. Respaldo simultáneo en tarjeta microSD vía bus SPI<br>
+              3. ESP32-CAM graba en paralelo el video del vuelo<br>
               4. Transmisión inalámbrica por LoRa 915 MHz (SX1262)<br>
-              5. Recepción en Heltec receptora y despliegue en laptop
+              5. Enlace ESP-NOW (2,4 GHz): estación terrena ↔ ESP32-CAM + Heltec<br>
+              6. Recepción en Heltec receptora y despliegue en laptop
             </div>
           </div>
 
@@ -1368,9 +1378,10 @@
             <ul style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-left: 1rem;">
               <li>Frecuencia central: <strong>915 MHz</strong> (Banda ISM).</li>
               <li>Módem RF: <strong>Semtech SX1262</strong> integrado en Heltec V3.</li>
-              <li>Registro redundante: <strong>Tarjeta microSD</strong> local en vuelo.</li>
+              <li>Video de vuelo: <strong>ESP32-CAM</strong> (OV2640) a bordo.</li>
+              <li>Enlace complementario: <strong>ESP-NOW 2,4 GHz</strong> desde la estación terrena hacia la ESP32-CAM y la Heltec.</li>
               <li>Estación terrena: <strong>Heltec V3 + Laptop</strong> con telemetría en vivo.</li>
-              <li>Línea de vista directa en todo el perfil de ascenso (0 a 70 m).</li>
+              <li>Línea de vista directa en todo el perfil de ascenso (0 a 30.1 m).</li>
             </ul>
           </div>
         </div>
@@ -1403,7 +1414,7 @@
               <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
                 <td style="padding: 0.5rem; font-weight: 700; color: #ffffff;">GY-91</td>
                 <td style="color: var(--text-secondary);">Presión atmosférica / Altitud</td>
-                <td>300 a 1100 hPa (0 a 70 m)</td>
+                <td>300 a 1100 hPa (0 a 30.1 m)</td>
                 <td style="color: var(--accent-cyan); font-weight: 700;">0.16 Pa / ±1.0 hPa</td>
                 <td>±0.8 m en altitud relativa</td>
               </tr>
@@ -1470,7 +1481,7 @@
               </tr>
               <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
                 <td style="padding: 0.45rem; font-weight: 700; color: #ffffff;">Presión de Lanzamiento</td>
-                <td>Máximo 70 PSI (NUNCA 80 PSI)</td>
+                <td>Máximo 70 PSI (Límite oficial estricto)</td>
                 <td>Operación estricta ≤ 70 PSI</td>
                 <td style="text-align: center;"><span class="status-badge measured">CUMPLE</span></td>
               </tr>
@@ -1483,7 +1494,7 @@
               <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
                 <td style="padding: 0.45rem; font-weight: 700; color: #ffffff;">Masa Seca Máxima</td>
                 <td>≤ 400 gramos (sin agua)</td>
-                <td>400 g (Masa final del vehículo)</td>
+                <td>335 g (Masa final del vehículo)</td>
                 <td style="text-align: center;"><span class="status-badge measured">CUMPLE</span></td>
               </tr>
               <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
@@ -1501,7 +1512,7 @@
               <tr>
                 <td style="padding: 0.45rem; font-weight: 700; color: #ffffff;">Recuperación</td>
                 <td>Paracaídas obligatorio</td>
-                <td>Paracaídas circular Ø75 cm con servo MG90S</td>
+                <td>Paracaídas circular Ø75 cm con servo MG90S (Aterrizaje: 3,4 m/s)</td>
                 <td style="text-align: center;"><span class="status-badge measured">CUMPLE</span></td>
               </tr>
             </tbody>
@@ -1521,6 +1532,12 @@
 
       <div class="footer-brand-tag">
         MISIÓN BRISA · AESS-SAT // <strong>UNIVERSIDAD DEL MAGDALENA</strong>
+      </div>
+
+      <!-- Navegación táctil (solo visible en dispositivos móviles) -->
+      <div class="footer-nav-controls">
+        <button class="action-btn" id="btn-prev" aria-label="Diapositiva anterior">‹ Anterior</button>
+        <button class="action-btn" id="btn-next" aria-label="Diapositiva siguiente">Siguiente ›</button>
       </div>
     </footer>
 
@@ -1557,6 +1574,36 @@
         <div class="schematic-modal-footer">
           <span style="font-size: 0.75rem; color: var(--accent-gold); font-family: var(--font-mono); font-weight: 800;">
             ALIMENTACIÓN · SENSADO · CONTROL · ACTUACIÓN
+          </span>
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan);">
+            Presiona 'ESC' o '✕' para volver a la presentación
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MODAL FULL-SCREEN PARA EL DASHBOARD TELEMÉTRICO (INSPECCIÓN EN VIVO) ── -->
+    <div class="dashboard-modal hidden" id="dashboard-modal">
+      <div class="dashboard-modal-backdrop" id="dashboard-modal-backdrop"></div>
+      <div class="dashboard-modal-content">
+        <div class="dashboard-modal-header">
+          <div>
+            <span class="status-badge valid" style="font-size: 0.68rem;">TELEMETRÍA EN VIVO LORA 915 MHz</span>
+            <h3 style="font-family: var(--font-title); font-size: 1.15rem; color: #ffffff; margin-top: 0.2rem;">
+              ESTACIÓN TERRENA // DASHBOARD TELEMÉTRICO EN TIEMPO REAL
+            </h3>
+            <div style="font-size: 0.75rem; color: var(--text-secondary);">
+              Recepción LoRa 915 MHz · Altitud, Presión, Aceleración 3-ejes, Coordenadas GPS y Estado de Misión
+            </div>
+          </div>
+          <button class="action-btn" id="btn-close-dashboard" style="font-size: 1.1rem; padding: 0.3rem 0.7rem; border-color: rgba(255,255,255,0.2);">✕</button>
+        </div>
+        <div class="dashboard-modal-body">
+          <img src="assets/img/dashboard_telemetria.jpg" alt="Dashboard de Telemetría Estación Terrena">
+        </div>
+        <div class="dashboard-modal-footer">
+          <span style="font-size: 0.75rem; color: var(--accent-gold); font-family: var(--font-mono); font-weight: 800;">
+            ENLACE RF 915 MHz · DECODIFICACIÓN EN VIVO · TELEMETRÍA SECUNDARIA
           </span>
           <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan);">
             Presiona 'ESC' o '✕' para volver a la presentación
