@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AESS-SAT · Consola del Expositor (Hugo Andrés Bustamante)</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background: #030712;
+      color: #ffffff;
+      overflow-y: auto;
+      padding: 1.2rem;
+      user-select: text;
+    }
+    .presenter-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .timer-dashboard {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      background: rgba(10, 20, 42, 0.95);
+      border: 1px solid var(--border-card);
+      border-radius: 12px;
+      padding: 1rem 1.8rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    }
+    .big-clock {
+      font-family: var(--font-title);
+      font-size: 3.6rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--accent-cyan);
+      transition: color 0.3s ease;
+    }
+    .clock-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+    }
+    .slide-timer-box {
+      border-left: 2px solid var(--border-subtle);
+      padding-left: 2rem;
+    }
+    .stage-status-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-top: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .stage-status-badge.nominal {
+      background: rgba(0, 240, 255, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+    }
+    .stage-status-badge.warning {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent-gold);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .stage-status-badge.alert {
+      background: rgba(249, 115, 22, 0.2);
+      color: var(--accent-orange);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+    }
+    .stage-status-badge.overtime {
+      background: rgba(239, 68, 68, 0.25);
+      color: var(--accent-red);
+      border: 1px solid var(--accent-red);
+      animation: pulseAlert 1s infinite alternate;
+    }
+    @keyframes pulseAlert {
+      from { opacity: 0.7; }
+      to { opacity: 1; transform: scale(1.02); }
+    }
+    .presenter-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 1.2rem;
+      align-items: start;
+    }
+    .script-card {
+      background: rgba(8, 16, 36, 0.96);
+      border: 1px solid var(--border-card);
+      border-radius: 12px;
+      padding: 1.8rem;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+    }
+    .script-text {
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: #f8fafc;
+      margin-top: 1.2rem;
+      border-left: 4px solid var(--accent-cyan);
+      padding-left: 1.5rem;
+      font-style: normal;
+    }
+    .script-text strong {
+      color: var(--accent-cyan);
+    }
+    .sidebar-section-title {
+      font-family: var(--font-title);
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 0.8rem 0 0.4rem 0.2rem;
+    }
+    .slide-nav-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      max-height: calc(100vh - 180px);
+      overflow-y: auto;
+      padding-right: 0.4rem;
+    }
+    .slide-jump-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 0.9rem;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      transition: all 0.2s ease;
+    }
+    .slide-jump-btn:hover {
+      background: rgba(0, 240, 255, 0.12);
+      border-color: var(--accent-cyan);
+      color: #ffffff;
+    }
+    .slide-jump-btn.active {
+      background: rgba(0, 240, 255, 0.2);
+      border-color: var(--accent-cyan);
+      color: #ffffff;
+      font-weight: bold;
+      border-left: 4px solid var(--accent-cyan);
+    }
+    .slide-jump-btn.backup-btn {
+      border-left: 3px solid rgba(245, 158, 11, 0.4);
+    }
+    .slide-jump-btn.backup-btn.active {
+      border-color: var(--accent-gold);
+      border-left: 4px solid var(--accent-gold);
+      background: rgba(245, 158, 11, 0.15);
+    }
+    .cheat-sheet-box {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="presenter-container">
+    <!-- PANEL MAESTRO DE CONTROL Y CRONÓMETRO -->
+    <div class="timer-dashboard">
+      <div>
+        <div class="clock-label">TIEMPO TOTAL TRANSCURRIDO (PRESUPUESTO: 5:00 / 300s)</div>
+        <div class="big-clock" id="pres-total-time">0:00</div>
+        <div class="stage-status-badge nominal" id="pres-stage-badge">RITMO NOMINAL (0:00 - 4:00)</div>
+      </div>
+
+      <div class="slide-timer-box">
+        <div class="clock-label">TIEMPO EN ESTA DIAPOSITIVA</div>
+        <div style="font-family: var(--font-title); font-size: 2.8rem; font-weight: 800; color: #ffffff;" id="pres-slide-time">
+          0s <span style="font-size: 1.2rem; color: var(--accent-gold);" id="pres-slide-budget">/ 20s</span>
+        </div>
+      </div>
+
+      <div style="margin-left: auto; display: flex; gap: 0.6rem; align-items: center;">
+        <button class="action-btn" id="pres-prev-btn" style="padding: 0.5rem 1rem;">◀ Anterior</button>
+        <button class="action-btn active" id="pres-next-btn" style="padding: 0.5rem 1.2rem;">Siguiente ▶</button>
+        <button class="action-btn" id="pres-reset-timer" style="padding: 0.5rem 0.8rem; font-size: 0.76rem; border-color: rgba(255,255,255,0.15);">↺ Reiniciar Reloj</button>
+      </div>
+    </div>
+
+    <!-- CUERPO PRINCIPAL: GUION + NAVEGACIÓN -->
+    <div class="presenter-grid">
+      <!-- Tarjeta del Guion Oral -->
+      <div class="script-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <span class="status-badge goal" id="pres-slide-badge">DIAPOSITIVA 01 / 10</span>
+            <h2 style="font-family: var(--font-title); font-size: 1.8rem; color: #ffffff; margin-top: 0.4rem; text-transform: uppercase;" id="pres-slide-title">
+              01. AESS-SAT · MISIÓN BRISA
+            </h2>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">EXPOSITOR OFICIAL:</div>
+            <div style="font-family: var(--font-title); font-size: 1.05rem; font-weight: 800; color: var(--accent-cyan);">HUGO ANDRÉS BUSTAMANTE</div>
+            <div style="font-size: 0.74rem; color: var(--accent-gold);">Equipo de 6 Integrantes · UNIMAGDALENA</div>
+          </div>
+        </div>
+
+        <div class="script-text" id="pres-script-text">
+          Cargando guion oral de sustentación...
+        </div>
+
+        <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.8rem; color: var(--text-muted);">
+            * Velocidad recomendada: 135 a 140 palabras por minuto. Articulación clara y contacto visual con el jurado.
+          </span>
+          <span style="color: var(--accent-gold); font-size: 0.85rem; font-weight: 700;" id="pres-transition-hint">
+            Siguiente: 02. DEL TERRITORIO A LA MISIÓN →
+          </span>
+        </div>
+
+        <div class="cheat-sheet-box">
+          <strong>Atajos de Teclado Rápidos:</strong><br>
+          • <strong>[Espacio] / [→]</strong>: Avanzar diapositiva &nbsp;|&nbsp; <strong>[←]</strong>: Retroceder<br>
+          • <strong>[1] al [9]</strong>: Diapositivas 1 a 9 &nbsp;|&nbsp; <strong>[0]</strong>: Diapositiva 10 (Cierre)<br>
+          • <strong>[B]</strong>: Saltar a Anexos Técnicos de Respaldo B1 a B7 (Durante sesión de preguntas)<br>
+          • <strong>[Esc]</strong>: Regresar a Diapositiva 10 desde anexos
+        </div>
+      </div>
+
+      <!-- Barra Lateral de Salto Rápido -->
+      <div class="slide-nav-sidebar" id="pres-slide-list">
+        <!-- Poblado dinámicamente con las 10 diapositivas y los 7 respaldos -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/presentador.js"></script>
+</body>
+</html>
