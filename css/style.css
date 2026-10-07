@@ -1200,6 +1200,56 @@ html, body {
   display: block;
 }
 
+/* ── PORTADA: QR DE ACCESO A LA PRESENTACIÓN (ARRIBA A LA DERECHA) ── */
+.cover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(0.9rem, 1.6vw, 1.4rem);
+}
+
+.cover-qr-card {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.45rem;
+  background: rgba(4, 10, 24, 0.88);
+  border: 1px solid var(--border-cyan);
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.15);
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.cover-qr-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-cyan);
+}
+
+.cover-qr-card .qr-img-box {
+  background: #ffffff;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.cover-qr-card .qr-img-box img {
+  width: clamp(92px, 8vw, 128px) !important;
+  height: clamp(92px, 8vw, 128px) !important;
+  display: block;
+}
+
+.cover-qr-caption {
+  margin-top: 0.3rem;
+  font-family: var(--font-title);
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
 /* ── THUMBNAIL DE ESQUEMÁTICO EN DIAPOSITIVA 05 ───────────────────── */
 .schematic-thumb-card {
   margin-top: 0.5rem;
@@ -1490,6 +1540,24 @@ html, body {
   /* ── Slide 1: silueta del cohete ── */
   #slide-1 img[src*="cohete_slide_1"] {
     max-height: 260px !important;
+  }
+
+  .cover-header {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .cover-qr-card {
+    padding: 0.3rem;
+  }
+
+  .cover-qr-card .qr-img-box img {
+    width: 72px !important;
+    height: 72px !important;
+  }
+
+  .cover-qr-caption {
+    display: none;
   }
 
   /* ── Slide 3: despiece ── */
